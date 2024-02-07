@@ -18,10 +18,10 @@ const Card: React.FC = () => {
 
   return (
     <div className="bg-dark-grayish-blue relative flex flex-col items-center rounded-[0.625rem] px-6 pb-16 pt-10 shadow-[30px_50px_80px_0px_rgba(0,0,0,0.10)] lg:p-12 lg:pb-[4.5rem]">
-      <h2 className="text-neon-green text-[0.6875rem] font-extrabold leading-normal tracking-[0.21606rem]">
-        Advice # 117
+      <h2 className="text-neon-green text-[0.6875rem] font-extrabold leading-normal tracking-[0.21606rem] lg:text-[0.8125rem] lg:tracking-[0.25538rem]">
+        Advice #{data?.slip.id}
       </h2>
-      <p className="my-6 text-center text-2xl font-extrabold leading-normal tracking-[-0.01606rem]">
+      <p className="my-6 text-center text-2xl font-extrabold leading-normal tracking-[-0.01606rem] lg:text-[1.75rem] lg:tracking-[-0.01875rem]">
         {isLoading
           ? "Loading..."
           : isError
