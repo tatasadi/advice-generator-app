@@ -12,7 +12,6 @@ const Card: React.FC = () => {
   })
 
   function generateAdvice() {
-    console.log("Generating new advice")
     refetch()
   }
 
