@@ -1,11 +1,19 @@
 "use client"
 import React from "react"
+import { useQuery } from "react-query"
 import iconDice from "@/public/images/icon-dice.svg"
 import Image from "next/image"
 
 const Card: React.FC = () => {
+  const { data, isLoading, isError, refetch } = useQuery("advice", async () => {
+    const response = await fetch("https://api.adviceslip.com/advice")
+    const data = await response.json()
+    return data
+  })
+
   function generateAdvice() {
     console.log("Generating new advice")
+    refetch()
   }
 
   return (
@@ -14,8 +22,11 @@ const Card: React.FC = () => {
         Advice # 117
       </h2>
       <p className="my-6 text-center text-2xl font-extrabold leading-normal tracking-[-0.01606rem]">
-        “It is easy to sit up and take notice, what's difficult is getting up
-        and taking action.”
+        {isLoading
+          ? "Loading..."
+          : isError
+            ? "Error fetching advice"
+            : data?.slip.advice}
       </p>
       <div className="h-4 w-full bg-[url('/images/pattern-divider-mobile.svg')] bg-cover bg-center bg-no-repeat sm:bg-[url('/images/pattern-divider-desktop.svg')]"></div>
       <button

@@ -49,7 +49,7 @@ Users should be able to:
 
 ### Implementation time
 
-This challenge was completed over a span of x hours.
+This challenge was completed over a span of 0.5 hours.
 
 ## Author
 
