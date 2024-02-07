@@ -25,7 +25,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${manrope.className} flex min-h-screen flex-col items-center justify-center`}
+        className={`${manrope.className} bg-dark-blue text-light-cyan flex min-h-screen flex-col items-center justify-center`}
       >
         {children}
       </body>
